@@ -2,8 +2,7 @@ import {View, Image, Text, StyleSheet} from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import Feather from "@expo/vector-icons/Feather";
-
-const laureanoPhoto = require("./laureano.jpg");
+import {laureanoPhoto} from "./Icons/Icons";
 
 export const Header = () => {
   return (

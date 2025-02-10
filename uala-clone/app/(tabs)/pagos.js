@@ -1,9 +1,9 @@
 import {View, Text} from "react-native";
 
-export default function Settings() {
+export default function Pagos() {
   return (
     <View>
-      <Text>Tab [Home|Settings]</Text>
+      <Text>Pagos</Text>
     </View>
   );
 }

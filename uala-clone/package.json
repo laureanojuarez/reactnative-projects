@@ -18,7 +18,8 @@
     "react-native-safe-area-context": "^5.2.0",
     "react-native-screens": "~4.4.0",
     "react-native-svg": "15.8.0",
-    "expo-router": "~4.0.17"
+    "expo-router": "~4.0.17",
+    "expo-local-authentication": "~15.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

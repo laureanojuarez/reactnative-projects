@@ -1,9 +1,5 @@
-import {View, Text} from "react-native";
+import {Transferencias} from "../../src/components/Transferencias";
 
 export default function Transfers() {
-  return (
-    <View>
-      <Text>Tab [Home|Transfers]</Text>
-    </View>
-  );
+  return <Transferencias />;
 }
