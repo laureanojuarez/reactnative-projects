@@ -1,12 +1,6 @@
-import {
-  Button,
-  Image,
-  StyleSheet,
-  Text,
-  TouchableHighlight,
-  View,
-} from "react-native";
+import {Image, StyleSheet, Text, TouchableHighlight, View} from "react-native";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import {Link} from "expo-router";
 const ualaIcon = require("../../../assets/uala-icon.png");
 
 export const Login = () => {
@@ -18,7 +12,7 @@ export const Login = () => {
           style={{width: 150, height: 50, resizeMode: "contain"}}
         />
         <Text style={styles.texto}>Hola, LAUREANO ADRIAN!</Text>
-        <Button title="No soy yo" color={"black"} />
+        <Link href="/home">Ir al home</Link>
       </View>
 
       <View style={styles.sectionBtns}>
