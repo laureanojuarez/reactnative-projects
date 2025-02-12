@@ -10,7 +10,7 @@ const useAuthentication = () => {
     if (!hasHardware) {
       Alert.alert(
         "Error",
-        "El dispositivo no soporta autenticación biométrica"
+        "El dispositivo no soporta autenticacion biometrica"
       );
       return;
     }
@@ -25,14 +25,14 @@ const useAuthentication = () => {
     }
 
     const result = await LocalAuthentication.authenticateAsync({
-      promptMessage: "Autenticación Biométrica",
+      promptMessage: "Autenticacion Biometrica",
       fallbackLabel: "Usar contraseña",
     });
 
     if (result.success) {
-      router.push("/home");
+      router.replace("/home-screen");
     } else {
-      Alert.alert("Error", "Autenticación fallida");
+      Alert.alert("Error", "Autenticacion fallida");
     }
   };
 

@@ -2,11 +2,16 @@ import {View, Image, Text, StyleSheet} from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import Feather from "@expo/vector-icons/Feather";
-import {laureanoPhoto} from "./Icons/Icons";
+import {laureanoPhoto} from "../Icons/Icons";
+import {useSafeAreaInsets} from "react-native-safe-area-context";
+import {StatusBar} from "expo-status-bar";
 
 export const Header = () => {
+  const insets = useSafeAreaInsets();
+
   return (
-    <View style={styles.header}>
+    <View style={[styles.header, {paddingTop: insets.top}]}>
+      <StatusBar style="light" backgroundColor="#2244ff" />
       <Image source={laureanoPhoto} style={styles.profileImage} />
       <View style={styles.headerText}>
         <Text style={styles.greetingText}>Hola, Laureano</Text>

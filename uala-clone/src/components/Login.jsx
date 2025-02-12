@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     width: "100%",
+    backgroundColor: "white",
   },
   texto: {
     fontSize: 20,
