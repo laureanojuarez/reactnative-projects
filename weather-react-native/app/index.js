@@ -1,32 +1,30 @@
-import {StyleSheet, Text, View} from "react-native";
-import {getWeatherByCity} from "../src/services/weatherApi";
-import {useEffect, useState} from "react";
+import {StyleSheet, Text, TextInput, View} from "react-native";
+import {useData} from "../src/hooks/useData";
+import {useState} from "react";
 
 export default function Index() {
-  const [weatherData, setWeatherData] = useState(null);
-
-  useEffect(() => {
-    // Llama a la función para verificar el console.log
-    const fetchWeather = async () => {
-      const data = await getWeatherByCity("Rosario");
-      setWeatherData(data);
-    };
-    fetchWeather();
-  }, []);
-
-  if (!weatherData) {
-    return (
-      <View style={styles.container}>
-        <Text>Loading...</Text>
-      </View>
-    );
-  }
+  const [city, setCity] = useState("");
+  const [searchCity, setSearchCity] = useState("");
+  const weatherData = useData(searchCity);
 
   return (
     <View style={styles.container}>
-      <Text>Ciudad: {weatherData.name} </Text>
-      <Text>Temperatura: {weatherData.main.temp}</Text>
-      <Text>Humedad: {weatherData.main.humidity} </Text>
+      <TextInput
+        placeholder="Ingresa tu ciudad"
+        value={city}
+        onChangeText={setCity}
+        onSubmitEditing={() => setSearchCity(city)}
+      />
+      {!weatherData && <Text>Loading...</Text>}
+      {weatherData && weatherData.main ? (
+        <>
+          <Text>Ciudad: {weatherData.name}</Text>
+          <Text>Temperatura: {weatherData.main.temp}°C</Text>
+          <Text>Humedad: {weatherData.main.humidity}%</Text>
+        </>
+      ) : (
+        weatherData && <Text>No se encontraron datos para la ciudad</Text>
+      )}
     </View>
   );
 }
